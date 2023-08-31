@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warthawg Gaming</title>
+    <title>Warthawg Gaming - My Projects</title>
     <link rel="icon" href="images/logo.png">
-    <!-- Google Fonts for Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         body {
@@ -19,11 +18,11 @@
             padding-top: 20px;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            min-height: 100vh; /* full viewport height */
         }
         .content {
-            flex: 1;
-            padding: 0 20px;
+            flex: 1; /* occupies all available space */
+            padding: 0 20px; /* padding for the content */
         }
         .topbar {
             display: flex;
@@ -37,17 +36,15 @@
             align-items: center;
         }
         .branding-text {
-            margin-left: 20px;
+            margin-left: 10px;
             font-size: 48px;
         }
         .logo {
             width: 150px;
-            margin-right: 20px;
         }
-        .banner {
-            height: 360px;
-            width: auto;
-            margin-top: 20px;
+        .links {
+            display: flex;
+            gap: 20px;
         }
         .links a {
             padding: 10px 20px;
@@ -61,13 +58,18 @@
         .links a:hover {
             background-color: #555;
         }
-        .welcome-text {
-            margin-top: 20px;
-            text-align: left;
+        table {
+            width: 100%;
+			border: 1px solid;
+            margin-top: 50px;
+			margin-left: auto;
+			margin-right:auto;
         }
-        .welcome-text .centered {
+        th, td {
             text-align: center;
-            margin-bottom: 20px;
+            vertical-align: middle;
+			border: 1px solid;
+			padding: 15px;
         }
         footer {
             background-color: rgba(0, 0, 0, 0.8);
@@ -75,8 +77,19 @@
             padding: 20px 0;
             text-align: center;
         }
+        footer a {
+            color: #00FF00;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            font-size: 18px;
+        }
+        footer a:hover {
+            color: #FFF;
+        }
     </style>
 </head>
+
 <body>
     <div class="topbar">
         <div class="branding">
@@ -91,18 +104,25 @@
         </div>
     </div>
     <div class="content">
-        <img src="images/banner.png" alt="Warthawg Gaming Banner" class="banner">
-        <div class="welcome-text">
-            <h2 class="centered">Welcome to Warthawg Gaming!</h2>
-            I am a passionate gamer who loves to share my gaming experiences with others. My channel is dedicated to bringing you the latest and greatest in gaming, from intense multiplayer battles to immersive single-player campaigns.
-            <br><br>
-            But it's not just about the games - I value my community and strive to create a welcoming, inclusive environment where everyone can feel at home. I love to engage with my viewers, so feel free to chat with me during our streams or join my Discord server to connect with other gamers.
-            <br><br>
-            So whether you're a seasoned veteran or new to gaming, join me on Warthawg Gaming for some epic gameplay, lively discussion, and a whole lot of fun!
-        </div>
+        <table>
+            <tr>
+                <th colspan="3">Minecraft Plugins</th>
+            </tr>
+            <tr>
+                <th>Plugin name</th>
+                <th>Description</th>
+				<th>Download</th>
+            </tr>
+            <tr>
+                <td>autohopper</td>
+                <td>After you right-click on a hopper with a stick, it allows you to crouch on the hopper to empty your inventory. It will only empty your inventory and not any armor you have on or items in your hotbar</td>
+				<td><a href="https://github.com/WarthawgGaming/autohopper/releases/download/v1.0.0/autohopper-1.0.jar">Download</a></td>
+            </tr>
+        </table>
     </div>
     <footer>
-        <p>©2023 Warthawg Gaming</p>
+        ©2023 Warthawg Gaming
     </footer>
 </body>
+
 </html>
