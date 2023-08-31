@@ -65,7 +65,14 @@
 			margin-left: auto;
 			margin-right:auto;
         }
-        th, td {
+        th {
+            text-align: center;
+            vertical-align: middle;
+			border: 1px solid;
+			padding: 15px;
+			white-space: nowrap;
+        }
+        td {
             text-align: center;
             vertical-align: middle;
 			border: 1px solid;
@@ -106,16 +113,18 @@
     <div class="content">
         <table>
             <tr>
-                <th colspan="3">Minecraft Plugins</th>
+                <th colspan="4">Minecraft Plugins</th>
             </tr>
             <tr>
                 <th>Plugin name</th>
                 <th>Description</th>
+				<th>Filename</th>
 				<th>Download</th>
             </tr>
             <tr>
                 <td>autohopper</td>
                 <td>After you right-click on a hopper with a stick, it allows you to crouch on the hopper to empty your inventory. It will only empty your inventory and not any armor you have on or items in your hotbar</td>
+				<td nowrap="nowrap">autohopper-1.0.jar</td>
 				<td><a href="https://github.com/WarthawgGaming/autohopper/releases/download/v1.0.0/autohopper-1.0.jar">Download</a></td>
             </tr>
         </table>
