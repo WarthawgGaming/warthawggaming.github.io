@@ -3,230 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Warthawg Gaming projects, Minecraft Java plugins, server tools, and downloads.">
     <title>Warthawg Gaming - My Projects</title>
     <link rel="icon" href="images/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Press Start 2P', cursive;
-            background-color: #222;
-            background-image: url(images/gaming-texture.jpg);
-            background-repeat: repeat;
-            color: #fff;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            line-height: 1.8;
-        }
-
-        .topbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 25px;
-            padding: 15px 40px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-bottom: 2px solid #00ff00;
-        }
-
-        .branding {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
-
-        .branding-text {
-            font-size: clamp(22px, 4vw, 44px);
-            color: #fff;
-            text-shadow: 3px 3px 0 #000;
-        }
-
-        .logo {
-            width: 110px;
-            max-width: 25vw;
-        }
-
-        .links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .links a,
-        .button-link {
-            display: inline-block;
-            padding: 10px 15px;
-            background-color: #333;
-            color: #00ff00;
-            text-decoration: none;
-            font-weight: bold;
-            border: 1px solid #00ff00;
-            border-radius: 6px;
-            transition: background-color 0.3s, color 0.3s;
-            font-size: 12px;
-        }
-
-        .links a:hover,
-        .button-link:hover {
-            background-color: #00ff00;
-            color: #111;
-        }
-
-        .content {
-            flex: 1;
-            width: min(1100px, 95%);
-            margin: 0 auto;
-            padding: 40px 20px 50px;
-        }
-
-        .page-card,
-        .project-card {
-            background-color: rgba(0, 0, 0, 0.65);
-            border: 2px solid rgba(0, 255, 0, 0.6);
-            border-radius: 12px;
-            padding: 25px;
-            margin: 20px auto;
-            box-shadow: 0 0 18px rgba(0, 255, 0, 0.18);
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 18px;
-            margin-top: 25px;
-        }
-
-        .project-card {
-            text-align: left;
-        }
-
-        .project-card h2 {
-            text-align: center;
-        }
-
-        .project-meta {
-            color: #ccc;
-            font-size: 11px;
-            text-align: center;
-        }
-
-        .save {
-            width: 36px;
-            vertical-align: middle;
-            margin-right: 10px;
-        }
-
-        h1, h2, h3 {
-            color: #00ff00;
-            line-height: 1.5;
-        }
-
-        p, li {
-            font-size: 13px;
-        }
-
-        ul {
-            padding-left: 25px;
-        }
-
-        footer {
-            background-color: rgba(0, 0, 0, 0.85);
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-            font-size: 11px;
-        }
-
-        @media (max-width: 800px) {
-            .topbar {
-                flex-direction: column;
-                padding: 15px;
-            }
-
-            .branding {
-                flex-direction: column;
-            }
-
-            .logo {
-                width: 90px;
-            }
-
-            .links a,
-            .button-link {
-                font-size: 10px;
-                padding: 9px 11px;
-            }
-
-            p, li {
-                font-size: 11px;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="topbar">
-        <div class="branding">
-            <img src="images/logo.png" alt="Warthawg Gaming Logo" class="logo">
-            <span class="branding-text">Warthawg Gaming</span>
+    <header class="site-header">
+        <div class="nav-wrap">
+            <a class="brand" href="index.html" aria-label="Warthawg Gaming Home">
+                <img src="images/logo.png" alt="Warthawg Gaming logo" class="brand-logo">
+                <span class="brand-text">
+                    <span class="brand-name">Warthawg Gaming</span>
+                    <span class="brand-tagline">Gaming • Servers • Community</span>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="social-media.html">Social Media</a>
+                <a class="active" href="my-projects.html">My Projects</a>
+                <a href="contact-me.html">Contact Me</a>
+            </nav>
         </div>
-        <nav class="links" aria-label="Main navigation">
-            <a href="index.html">Home</a>
-            <a href="social-media.html">Social Media</a>
-            <a href="my-projects.html">My Projects</a>
-            <a href="contact-me.html">Contact Me</a>
-        </nav>
     </header>
 
-    <main class="content">
-        <section class="page-card">
-            <h1>My Projects</h1>
-            <p>
-                This page is where I share Minecraft plugins, server tools, and other Warthawg Gaming projects. More custom plugins and server features will be added as they are built and tested.
-            </p>
+    <main>
+        <section class="page-panel">
+            <span class="kicker">Projects</span>
+            <h1>Plugins and server tools</h1>
+            <p class="lead">A central place for Warthawg Gaming Minecraft plugins, server utilities, and project updates.</p>
         </section>
 
-        <section class="project-grid" aria-label="Project list">
-            <article class="project-card">
-                <h2>AutoHopper</h2>
-                <p class="project-meta">Minecraft Java Edition Plugin</p>
-                <p>
-                    AutoHopper is a custom Minecraft plugin that lets a player right-click a hopper with a stick, then crouch on that hopper to empty their inventory into it.
-                </p>
-                <ul>
-                    <li>Only empties the player inventory.</li>
-                    <li>Does not remove armor.</li>
-                    <li>Does not remove hotbar items.</li>
-                    <li>Designed for survival server convenience.</li>
-                </ul>
-                <p>
-                    <a class="button-link" href="https://github.com/WarthawgGaming/autohopper/releases/download/v1.0.0/autohopper-1.0.jar">
-                        <img src="images/save-icon.png" alt="Download icon" class="save">Download autohopper-1.0.jar
-                    </a>
-                </p>
-            </article>
+        <section class="section">
+            <div class="grid two">
+                <article class="card project-card">
+                    <span class="badge">Minecraft Java Plugin</span>
+                    <h2>AutoHopper</h2>
+                    <p>AutoHopper is a custom Minecraft plugin that lets a player right-click a hopper with a stick, then crouch on that hopper to empty their inventory into it.</p>
+                    <ul>
+                        <li>Only empties the player inventory.</li>
+                        <li>Does not remove armor.</li>
+                        <li>Does not remove hotbar items.</li>
+                        <li>Designed for survival server convenience.</li>
+                    </ul>
+                    <div class="actions">
+                        <a class="button primary" href="https://github.com/WarthawgGaming/autohopper/releases">View AutoHopper Releases</a>
+                    </div>
+                </article>
 
-            <article class="project-card">
-                <h2>Custom Server Plugins</h2>
-                <p class="project-meta">In Development</p>
-                <p>
-                    I am working on custom plugin ideas for Minecraft Java servers, including quality-of-life tools, permission-based features, and server systems built around how my community plays.
-                </p>
-                <p>
-                    Future plugin downloads and documentation will be added here as projects are completed.
-                </p>
-            </article>
+                <article class="card project-card">
+                    <span class="badge">In Development</span>
+                    <h2>Custom Server Plugins</h2>
+                    <p>I am working on custom plugin ideas for Minecraft Java servers, including quality-of-life tools, permission-based features, and server systems built around how my community plays.</p>
+                    <p>Future downloads, documentation, and setup notes will be added here as projects are completed and tested.</p>
+                    <div class="actions">
+                        <a class="button secondary" href="contact-me.html">Ask about a project</a>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>©2026 Warthawg Gaming</p>
+    <footer class="site-footer">
+        <div class="footer-wrap">
+            <span>©2026 Warthawg Gaming</span>
+            <span>Built with GitHub Pages</span>
+        </div>
     </footer>
 </body>
 </html>
