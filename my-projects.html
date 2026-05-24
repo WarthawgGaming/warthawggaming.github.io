@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,133 +7,226 @@
     <link rel="icon" href="images/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
+            margin: 0;
             font-family: 'Press Start 2P', cursive;
             background-color: #222;
             background-image: url(images/gaming-texture.jpg);
             background-repeat: repeat;
-            color: #FFF;
+            color: #fff;
             text-align: center;
-            padding-top: 20px;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* full viewport height */
+            min-height: 100vh;
+            line-height: 1.8;
         }
-        .content {
-            flex: 1; /* occupies all available space */
-            padding: 0 20px; /* padding for the content */
-        }
+
         .topbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 50px;
-            background-color: rgba(0, 0, 0, 0.5);
+            gap: 25px;
+            padding: 15px 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-bottom: 2px solid #00ff00;
         }
+
         .branding {
             display: flex;
             align-items: center;
+            gap: 18px;
         }
+
         .branding-text {
-            margin-left: 10px;
-            font-size: 48px;
+            font-size: clamp(22px, 4vw, 44px);
+            color: #fff;
+            text-shadow: 3px 3px 0 #000;
         }
+
         .logo {
-            width: 150px;
+            width: 110px;
+            max-width: 25vw;
         }
-        .save {
-            width: 50px;
-        }
+
         .links {
             display: flex;
-            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
         }
-        .links a {
-            padding: 10px 20px;
+
+        .links a,
+        .button-link {
+            display: inline-block;
+            padding: 10px 15px;
             background-color: #333;
-            color: #00FF00;
+            color: #00ff00;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            border: 1px solid #00ff00;
+            border-radius: 6px;
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 12px;
         }
-        .links a:hover {
-            background-color: #555;
+
+        .links a:hover,
+        .button-link:hover {
+            background-color: #00ff00;
+            color: #111;
         }
-        table {
-            width: 100%;
-			border: 1px solid;
-            margin-top: 50px;
-			margin-left: auto;
-			margin-right:auto;
+
+        .content {
+            flex: 1;
+            width: min(1100px, 95%);
+            margin: 0 auto;
+            padding: 40px 20px 50px;
         }
-        th {
+
+        .page-card,
+        .project-card {
+            background-color: rgba(0, 0, 0, 0.65);
+            border: 2px solid rgba(0, 255, 0, 0.6);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px auto;
+            box-shadow: 0 0 18px rgba(0, 255, 0, 0.18);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .project-card {
+            text-align: left;
+        }
+
+        .project-card h2 {
             text-align: center;
-            vertical-align: middle;
-			border: 1px solid;
-			padding: 15px;
-			white-space: nowrap;
         }
-        td {
+
+        .project-meta {
+            color: #ccc;
+            font-size: 11px;
             text-align: center;
-            vertical-align: middle;
-			border: 1px solid;
-			padding: 15px;
         }
+
+        .save {
+            width: 36px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        h1, h2, h3 {
+            color: #00ff00;
+            line-height: 1.5;
+        }
+
+        p, li {
+            font-size: 13px;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
         footer {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #FFF;
-            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.85);
+            color: #fff;
+            padding: 20px 10px;
             text-align: center;
+            font-size: 11px;
         }
-        footer a {
-            color: #00FF00;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-            font-size: 18px;
-        }
-        footer a:hover {
-            color: #FFF;
+
+        @media (max-width: 800px) {
+            .topbar {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .branding {
+                flex-direction: column;
+            }
+
+            .logo {
+                width: 90px;
+            }
+
+            .links a,
+            .button-link {
+                font-size: 10px;
+                padding: 9px 11px;
+            }
+
+            p, li {
+                font-size: 11px;
+            }
         }
     </style>
 </head>
-
 <body>
-    <div class="topbar">
+    <header class="topbar">
         <div class="branding">
             <img src="images/logo.png" alt="Warthawg Gaming Logo" class="logo">
             <span class="branding-text">Warthawg Gaming</span>
         </div>
-        <div class="links">
+        <nav class="links" aria-label="Main navigation">
             <a href="index.html">Home</a>
             <a href="social-media.html">Social Media</a>
             <a href="my-projects.html">My Projects</a>
             <a href="contact-me.html">Contact Me</a>
-        </div>
-    </div>
-    <div class="content">
-        <table>
-            <tr>
-                <th colspan="4">Minecraft Plugins</th>
-            </tr>
-            <tr>
-                <th>Plugin name</th>
-                <th>Description</th>
-				<th>Filename</th>
-				<th>Download</th>
-            </tr>
-            <tr>
-                <td>autohopper</td>
-                <td>After you right-click on a hopper with a stick, it allows you to crouch on the hopper to empty your inventory. It will only empty your inventory and not any armor you have on or items in your hotbar</td>
-				<td nowrap="nowrap">autohopper-1.0.jar</td>
-				<td><a href="https://github.com/WarthawgGaming/autohopper/releases/download/v1.0.0/autohopper-1.0.jar"><img src="images/save-icon.png" alt="Click to download file" class="save"></a></td>
-            </tr>
-        </table>
-    </div>
+        </nav>
+    </header>
+
+    <main class="content">
+        <section class="page-card">
+            <h1>My Projects</h1>
+            <p>
+                This page is where I share Minecraft plugins, server tools, and other Warthawg Gaming projects. More custom plugins and server features will be added as they are built and tested.
+            </p>
+        </section>
+
+        <section class="project-grid" aria-label="Project list">
+            <article class="project-card">
+                <h2>AutoHopper</h2>
+                <p class="project-meta">Minecraft Java Edition Plugin</p>
+                <p>
+                    AutoHopper is a custom Minecraft plugin that lets a player right-click a hopper with a stick, then crouch on that hopper to empty their inventory into it.
+                </p>
+                <ul>
+                    <li>Only empties the player inventory.</li>
+                    <li>Does not remove armor.</li>
+                    <li>Does not remove hotbar items.</li>
+                    <li>Designed for survival server convenience.</li>
+                </ul>
+                <p>
+                    <a class="button-link" href="https://github.com/WarthawgGaming/autohopper/releases/download/v1.0.0/autohopper-1.0.jar">
+                        <img src="images/save-icon.png" alt="Download icon" class="save">Download autohopper-1.0.jar
+                    </a>
+                </p>
+            </article>
+
+            <article class="project-card">
+                <h2>Custom Server Plugins</h2>
+                <p class="project-meta">In Development</p>
+                <p>
+                    I am working on custom plugin ideas for Minecraft Java servers, including quality-of-life tools, permission-based features, and server systems built around how my community plays.
+                </p>
+                <p>
+                    Future plugin downloads and documentation will be added here as projects are completed.
+                </p>
+            </article>
+        </section>
+    </main>
+
     <footer>
-        ©2023 Warthawg Gaming
+        <p>©2026 Warthawg Gaming</p>
     </footer>
 </body>
-
 </html>
