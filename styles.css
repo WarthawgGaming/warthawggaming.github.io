@@ -1,7 +1,7 @@
 :root {
     --bg: #0b0f19;
     --bg-soft: #111827;
-    --card: rgba(17, 24, 39, 0.86);
+    --card: rgba(17, 24, 39, 0.88);
     --card-border: rgba(148, 163, 184, 0.22);
     --text: #f8fafc;
     --muted: #cbd5e1;
@@ -33,6 +33,18 @@ body {
     line-height: 1.7;
 }
 
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(148, 163, 184, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 75%);
+}
+
 a {
     color: inherit;
 }
@@ -42,7 +54,7 @@ a {
     top: 0;
     z-index: 10;
     backdrop-filter: blur(18px);
-    background: rgba(11, 15, 25, 0.82);
+    background: rgba(11, 15, 25, 0.86);
     border-bottom: 1px solid rgba(148, 163, 184, 0.16);
 }
 
@@ -53,7 +65,7 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    padding: 16px 0;
+    padding: 14px 0;
 }
 
 .brand {
@@ -64,9 +76,9 @@ a {
 }
 
 .brand-logo {
-    width: 56px;
-    height: 56px;
-    border-radius: 16px;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
     object-fit: cover;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
@@ -79,13 +91,13 @@ a {
 
 .brand-name {
     font-weight: 800;
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     letter-spacing: 0.02em;
 }
 
 .brand-tagline {
     color: var(--muted-2);
-    font-size: 0.78rem;
+    font-size: 0.76rem;
 }
 
 .site-nav {
@@ -102,24 +114,25 @@ a {
     padding: 9px 13px;
     border-radius: 999px;
     font-size: 0.94rem;
-    transition: background 0.2s ease, color 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .site-nav a:hover,
 .site-nav a.active {
     background: var(--accent-soft);
     color: var(--text);
+    transform: translateY(-1px);
 }
 
 main {
     width: min(1120px, calc(100% - 32px));
     margin: 0 auto;
-    padding: 54px 0 70px;
+    padding: 48px 0 70px;
 }
 
 .hero {
     display: grid;
-    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+    grid-template-columns: minmax(0, 1.18fr) minmax(280px, 0.82fr);
     gap: 28px;
     align-items: stretch;
 }
@@ -134,7 +147,20 @@ main {
 }
 
 .hero-panel {
-    padding: clamp(28px, 5vw, 56px);
+    padding: clamp(28px, 4.4vw, 48px);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-panel::after {
+    content: '';
+    position: absolute;
+    right: -140px;
+    bottom: -160px;
+    width: 340px;
+    height: 340px;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.18), transparent 68%);
+    pointer-events: none;
 }
 
 .kicker {
@@ -159,8 +185,9 @@ h3 {
 }
 
 h1 {
-    font-size: clamp(2.35rem, 7vw, 5rem);
-    letter-spacing: -0.06em;
+    max-width: 10.5ch;
+    font-size: clamp(2.35rem, 5.8vw, 4.35rem);
+    letter-spacing: -0.055em;
 }
 
 h2 {
@@ -180,8 +207,8 @@ p {
 
 .lead {
     color: #e2e8f0;
-    font-size: clamp(1.05rem, 2vw, 1.2rem);
-    max-width: 68ch;
+    font-size: clamp(1.05rem, 2vw, 1.18rem);
+    max-width: 60ch;
 }
 
 .actions {
@@ -203,11 +230,12 @@ p {
     text-decoration: none;
     font-weight: 800;
     border: 1px solid transparent;
-    transition: transform 0.2s ease, background 0.2s ease, border 0.2s ease;
+    transition: transform 0.2s ease, background 0.2s ease, border 0.2s ease, box-shadow 0.2s ease;
 }
 
 .button:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
 }
 
 .button.primary {
@@ -247,12 +275,13 @@ p {
 }
 
 .hero-logo {
-    width: 128px;
-    height: 128px;
-    border-radius: 30px;
+    width: 150px;
+    height: 150px;
+    border-radius: 34px;
     object-fit: cover;
     border: 1px solid rgba(255, 255, 255, 0.14);
     position: relative;
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.32);
 }
 
 .stat-list {
@@ -296,8 +325,22 @@ p {
     grid-template-columns: repeat(2, 1fr);
 }
 
+.featured-project {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(240px, 0.6fr);
+    gap: 18px;
+    align-items: stretch;
+}
+
 .card {
     padding: 24px;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(34, 197, 94, 0.36);
+    background: rgba(17, 24, 39, 0.94);
 }
 
 .card p,
@@ -327,6 +370,11 @@ p {
 .page-panel {
     padding: clamp(26px, 4vw, 42px);
     text-align: center;
+}
+
+.page-panel h1 {
+    max-width: none;
+    margin: 0 auto;
 }
 
 .project-card {
@@ -403,7 +451,8 @@ textarea {
 
 @media (max-width: 900px) {
     .nav-wrap,
-    .hero {
+    .hero,
+    .featured-project {
         grid-template-columns: 1fr;
     }
 
@@ -424,6 +473,10 @@ textarea {
     .hero-aside {
         align-items: center;
         text-align: center;
+    }
+
+    h1 {
+        max-width: 12ch;
     }
 }
 
