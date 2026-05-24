@@ -3,193 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Connect with Warthawg Gaming on Discord and Twitch.">
     <title>Warthawg Gaming - Social Media</title>
     <link rel="icon" href="images/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Press Start 2P', cursive;
-            background-color: #222;
-            background-image: url(images/gaming-texture.jpg);
-            background-repeat: repeat;
-            color: #fff;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            line-height: 1.8;
-        }
-
-        .topbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 25px;
-            padding: 15px 40px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-bottom: 2px solid #00ff00;
-        }
-
-        .branding {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
-
-        .branding-text {
-            font-size: clamp(22px, 4vw, 44px);
-            color: #fff;
-            text-shadow: 3px 3px 0 #000;
-        }
-
-        .logo {
-            width: 110px;
-            max-width: 25vw;
-        }
-
-        .links,
-        .social-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .links a,
-        .social-card a {
-            display: inline-block;
-            padding: 10px 15px;
-            background-color: #333;
-            color: #00ff00;
-            text-decoration: none;
-            font-weight: bold;
-            border: 1px solid #00ff00;
-            border-radius: 6px;
-            transition: background-color 0.3s, color 0.3s;
-            font-size: 12px;
-        }
-
-        .links a:hover,
-        .social-card a:hover {
-            background-color: #00ff00;
-            color: #111;
-        }
-
-        .content {
-            flex: 1;
-            width: min(1000px, 95%);
-            margin: 0 auto;
-            padding: 40px 20px 50px;
-        }
-
-        .page-card,
-        .social-card {
-            background-color: rgba(0, 0, 0, 0.65);
-            border: 2px solid rgba(0, 255, 0, 0.6);
-            border-radius: 12px;
-            padding: 25px;
-            margin: 20px auto;
-            box-shadow: 0 0 18px rgba(0, 255, 0, 0.18);
-        }
-
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            max-width: 650px;
-            margin: 25px auto 0;
-        }
-
-        .social-card img {
-            width: 70px;
-            height: 70px;
-            object-fit: contain;
-            margin-bottom: 18px;
-        }
-
-        h1, h2 {
-            color: #00ff00;
-            line-height: 1.5;
-        }
-
-        p {
-            font-size: 13px;
-        }
-
-        footer {
-            background-color: rgba(0, 0, 0, 0.85);
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-            font-size: 11px;
-        }
-
-        @media (max-width: 800px) {
-            .topbar {
-                flex-direction: column;
-                padding: 15px;
-            }
-
-            .branding {
-                flex-direction: column;
-            }
-
-            .logo {
-                width: 90px;
-            }
-
-            .links a,
-            .social-card a {
-                font-size: 10px;
-                padding: 9px 11px;
-            }
-
-            p {
-                font-size: 11px;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="topbar">
-        <div class="branding">
-            <img src="images/logo.png" alt="Warthawg Gaming Logo" class="logo">
-            <span class="branding-text">Warthawg Gaming</span>
+    <header class="site-header">
+        <div class="nav-wrap">
+            <a class="brand" href="index.html" aria-label="Warthawg Gaming Home">
+                <img src="images/logo.png" alt="Warthawg Gaming logo" class="brand-logo">
+                <span class="brand-text">
+                    <span class="brand-name">Warthawg Gaming</span>
+                    <span class="brand-tagline">Gaming • Servers • Community</span>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a class="active" href="social-media.html">Social Media</a>
+                <a href="my-projects.html">My Projects</a>
+                <a href="contact-me.html">Contact Me</a>
+            </nav>
         </div>
-        <nav class="links" aria-label="Main navigation">
-            <a href="index.html">Home</a>
-            <a href="social-media.html">Social Media</a>
-            <a href="my-projects.html">My Projects</a>
-            <a href="contact-me.html">Contact Me</a>
-        </nav>
     </header>
 
-    <main class="content">
-        <section class="page-card">
-            <h1>Connect with Warthawg Gaming</h1>
-            <p>Join the community on Discord or watch live on Twitch.</p>
+    <main>
+        <section class="page-panel">
+            <span class="kicker">Connect</span>
+            <h1>Follow Warthawg Gaming</h1>
+            <p class="lead">Join the community on Discord or watch live on Twitch.</p>
         </section>
 
-        <section class="social-grid" aria-label="Social media links">
-            <article class="social-card">
-                <img src="images/discord.png" alt="Discord Logo">
-                <h2>Discord</h2>
-                <a href="https://discord.gg/SFKsPd8YjH">Join Discord</a>
-            </article>
-            <article class="social-card">
-                <img src="images/twitch.png" alt="Twitch Logo">
-                <h2>Twitch</h2>
-                <a href="https://www.twitch.tv/warthawggaming">Watch on Twitch</a>
-            </article>
+        <section class="section">
+            <div class="grid two">
+                <article class="card">
+                    <img src="images/discord.png" alt="Discord logo" class="card-icon">
+                    <span class="badge">Community</span>
+                    <h2>Discord</h2>
+                    <p>Join the Warthawg Gaming community for server updates, gaming discussion, and project announcements.</p>
+                    <div class="actions">
+                        <a class="button primary" href="https://discord.gg/SFKsPd8YjH">Join Discord</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="images/twitch.png" alt="Twitch logo" class="card-icon">
+                    <span class="badge">Live Streams</span>
+                    <h2>Twitch</h2>
+                    <p>Watch live gameplay, hang out during streams, and follow along with current gaming projects.</p>
+                    <div class="actions">
+                        <a class="button primary" href="https://www.twitch.tv/warthawggaming">Watch on Twitch</a>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>©2026 Warthawg Gaming</p>
+    <footer class="site-footer">
+        <div class="footer-wrap">
+            <span>©2026 Warthawg Gaming</span>
+            <span>Built with GitHub Pages</span>
+        </div>
     </footer>
 </body>
 </html>
