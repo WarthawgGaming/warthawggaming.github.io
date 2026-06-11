@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Plugin documentation and setup guides for Warthawg Gaming projects.">
+    <meta name="description" content="Plugin documentation, AI Plugin Forge setup notes, and setup guides for Warthawg Gaming projects.">
     <title>Warthawg Gaming - Documentation</title>
     <link rel="icon" href="images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,12 +36,39 @@
 <main>
     <section class="page-panel">
         <span class="kicker">Documentation</span>
-        <h1>Plugin documentation and guides</h1>
-        <p class="lead">Setup instructions, planned documentation, and future plugin information.</p>
+        <h1>Plugin documentation, setup notes, and guides</h1>
+        <p class="lead">Setup instructions, planned documentation, AI Plugin Forge notes, and future plugin information.</p>
     </section>
 
     <section class="section">
         <div class="grid two">
+            <article class="card">
+                <span class="badge">AI Plugin Forge</span>
+                <h2>Starter Setup</h2>
+                <ol>
+                    <li>Review the AI Plugin Forge pull request in the plugin repository.</li>
+                    <li>Merge the forge files when ready.</li>
+                    <li>Clone the repository to the local development PC.</li>
+                    <li>Install Python 3.11+, Java 21, and Gradle.</li>
+                    <li>Copy <code>.env.example</code> to <code>.env</code> and add API keys locally.</li>
+                    <li>Run the forge from PowerShell with a request such as <code>python forge.py "Make me a unique Minecraft Paper plugin"</code>.</li>
+                </ol>
+                <div class="actions">
+                    <a class="button primary" href="https://github.com/WarthawgGaming/warthawggaming-plugins/pull/1">View AI Plugin Forge PR</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <span class="badge">Security</span>
+                <h2>API Key Safety</h2>
+                <ul>
+                    <li>Never commit the real <code>.env</code> file.</li>
+                    <li>Only commit <code>.env.example</code>.</li>
+                    <li>Keep OpenAI, Gemini, and DeepSeek keys private.</li>
+                    <li>Test generated plugin jars on a local or test server before using them live.</li>
+                </ul>
+            </article>
+
             <article class="card">
                 <span class="badge">AutoHopper</span>
                 <h2>Installation</h2>
@@ -62,6 +89,7 @@
                     <li>Version compatibility</li>
                     <li>Plugin changelogs</li>
                     <li>Troubleshooting guides</li>
+                    <li>AI Plugin Forge workflow notes</li>
                 </ul>
             </article>
         </div>
